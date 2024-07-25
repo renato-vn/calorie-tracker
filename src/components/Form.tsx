@@ -20,7 +20,7 @@ const Form = ({ dispatch, state }: FormProps) => {
   const [activity, setActivity] = useState<Activity>(initialState);
 
   const handleChange = (
-    e: ChangeEvent<HTMLSelectElement | HTMLInputElement>
+    e: ChangeEvent<HTMLSelectElement | HTMLInputElement>,
   ) => {
     const isNumberField = ["category", "calories"].includes(e.target.id);
 
@@ -45,7 +45,7 @@ const Form = ({ dispatch, state }: FormProps) => {
   useEffect(() => {
     if (state.activeId) {
       const selectedActivity = state.activities.filter(
-        (stateActivity) => stateActivity.id === state.activeId
+        (stateActivity) => stateActivity.id === state.activeId,
       )[0];
       setActivity(selectedActivity);
     }

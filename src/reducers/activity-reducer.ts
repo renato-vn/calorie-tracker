@@ -22,13 +22,13 @@ export const initialState: ActivityState = {
 };
 export const activityReducer = (
   state: ActivityState,
-  action: ActivityActions
+  action: ActivityActions,
 ) => {
   if (action.type === "save-activity") {
     let updatedActivities: Activity[] = [];
     if (state.activeId) {
       updatedActivities = state.activities.map((activity) =>
-        activity.id === state.activeId ? action.payload.newActivity : activity
+        activity.id === state.activeId ? action.payload.newActivity : activity,
       );
     } else {
       updatedActivities = [...state.activities, action.payload.newActivity];
@@ -51,7 +51,7 @@ export const activityReducer = (
     return {
       ...state,
       activities: state.activities.filter(
-        (activity) => activity.id !== action.payload.id
+        (activity) => activity.id !== action.payload.id,
       ),
     };
   }

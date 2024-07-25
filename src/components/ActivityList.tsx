@@ -13,7 +13,7 @@ const ActivityList = ({ activities, dispatch }: ActivityListProps) => {
   const categoryName = useMemo(
     () => (category: Activity["category"]) =>
       categories.map((cat) => (cat.id === category ? cat.name : "")),
-    [activities]
+    [activities],
   );
 
   const isEmptyActivities = useMemo(() => !activities.length, [activities]);

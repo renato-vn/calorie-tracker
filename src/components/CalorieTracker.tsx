@@ -13,9 +13,9 @@ const CalorieTracker = ({ activities }: CalorieTrackerProps) => {
       activities.reduce(
         (total, activity) =>
           activity.category === 1 ? total + activity.calories : total,
-        0
+        0,
       ),
-    [activities]
+    [activities],
   );
 
   const caloriesBurned = useMemo(
@@ -23,14 +23,14 @@ const CalorieTracker = ({ activities }: CalorieTrackerProps) => {
       activities.reduce(
         (total, activity) =>
           activity.category === 2 ? total + activity.calories : total,
-        0
+        0,
       ),
-    [activities]
+    [activities],
   );
 
   const netCalories = useMemo(
     () => caloriesConsumed - caloriesBurned,
-    [activities]
+    [activities],
   );
 
   return (
